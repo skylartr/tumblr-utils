@@ -9,7 +9,7 @@ from datetime import datetime
 import errno
 from glob import glob
 import hashlib
-from httplib import HTTPException
+from http.client import HTTPException
 import imghdr
 try:
     import json
@@ -18,15 +18,15 @@ except ImportError:
 import locale
 import os
 from os.path import join, split, splitext
-import Queue
+import queue
 import re
 import ssl
 import sys
 import threading
 import time
 import urllib
-import urllib2
-import urlparse
+import urllib.request
+import urllib.parse
 from xml.sax.saxutils import escape
 
 try:
@@ -72,7 +72,7 @@ save_folder = ''
 media_folder = ''
 
 # constant names
-root_folder = os.getcwdu()
+root_folder = os.getcwd()
 post_dir = 'posts'
 json_dir = 'json'
 media_dir = 'media'
